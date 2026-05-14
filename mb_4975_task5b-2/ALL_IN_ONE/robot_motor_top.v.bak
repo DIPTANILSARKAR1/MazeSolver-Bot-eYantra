@@ -1,0 +1,59 @@
+module robot_motor_top (
+    input  wire clk,
+    input  wire reset,
+
+    // Encoder inputs
+    input  wire EN1_A,
+    input  wire EN2_A,
+    input  wire EN1_B,
+    input  wire EN2_B,
+
+    // Motor driver outputs
+    output wire ENA,
+    output wire ENB,
+    output wire IN1,
+    output wire IN2,
+    output wire IN3,
+    output wire IN4
+);
+
+    wire signed [31:0] pos_A, pos_B;
+
+    // Example control values
+    wire [7:0] speed_A = 8'd120;
+    wire [7:0] speed_B = 8'd180;
+    wire [1:0] dir_A   = 2'b01; // CW
+    wire [1:0] dir_B   = 2'b01; // CW
+
+    motor_controller motor_ctrl (
+        .clk(clk),
+        .reset(reset),
+        .speed_A(speed_A),
+        .speed_B(speed_B),
+        .dir_A(dir_A),
+        .dir_B(dir_B),
+        .ENA(ENA),
+        .ENB(ENB),
+        .IN1(IN1),
+        .IN2(IN2),
+        .IN3(IN3),
+        .IN4(IN4)
+    );
+
+    encoder_decoder encA (
+        .clk(clk),
+        .reset(reset),
+        .enc_A(EN1_A),
+        .enc_B(EN2_A),
+        .position(pos_A)
+    );
+
+    encoder_decoder encB (
+        .clk(clk),
+        .reset(reset),
+        .enc_A(EN1_B),
+        .enc_B(EN2_B),
+        .position(pos_B)
+    );
+
+endmodule

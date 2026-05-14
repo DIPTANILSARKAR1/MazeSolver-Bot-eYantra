@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/t2b_uart/uart_rx/simulation/modelsim
+vtb
+!s110 1762843937
+!i10b 1
+!s100 _8QgF]mIVLcW]i2^g:nDe2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+INH[IXTAU`FElS]b;UfVng3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1759302883
+8D:/t2b_uart/uart_rx/.test/tb.v
+FD:/t2b_uart/uart_rx/.test/tb.v
+!i122 1
+L0 3 125
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1762843937.000000
+!s107 D:/t2b_uart/uart_rx/.test/tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/t2b_uart/uart_rx/.test|D:/t2b_uart/uart_rx/.test/tb.v|
+!i113 1
+Z4 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+D:/t2b_uart/uart_rx/.test
+Z5 tCvgOpt 0
+vuart_rx
+!s110 1762843936
+!i10b 1
+!s100 BQD@HMKM=AZ;MzgY4MbcG3
+R1
+IkRK^_2c4FKSVk@FB>g4MD3
+R2
+R0
+w1762843883
+8D:/t2b_uart/uart_rx/code/uart_rx.v
+FD:/t2b_uart/uart_rx/code/uart_rx.v
+!i122 0
+L0 1 104
+R3
+r1
+!s85 0
+31
+!s108 1762843936.000000
+!s107 D:/t2b_uart/uart_rx/code/uart_rx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/t2b_uart/uart_rx/code|D:/t2b_uart/uart_rx/code/uart_rx.v|
+!i113 1
+R4
+!s92 -vlog01compat -work work +incdir+D:/t2b_uart/uart_rx/code
+R5

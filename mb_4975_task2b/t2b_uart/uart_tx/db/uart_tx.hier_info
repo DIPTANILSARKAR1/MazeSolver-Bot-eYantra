@@ -1,0 +1,47 @@
+|uart_tx
+clk_3125 => bit_index[0].CLK
+clk_3125 => bit_index[1].CLK
+clk_3125 => bit_index[2].CLK
+clk_3125 => clk_counter[0].CLK
+clk_3125 => clk_counter[1].CLK
+clk_3125 => clk_counter[2].CLK
+clk_3125 => clk_counter[3].CLK
+clk_3125 => clk_counter[4].CLK
+clk_3125 => tx~reg0.CLK
+clk_3125 => tx_done~reg0.CLK
+clk_3125 => state_reg~6.DATAIN
+parity_type => tx.IN1
+tx_start => clk_counter.OUTPUTSELECT
+tx_start => clk_counter.OUTPUTSELECT
+tx_start => clk_counter.OUTPUTSELECT
+tx_start => clk_counter.OUTPUTSELECT
+tx_start => clk_counter.OUTPUTSELECT
+tx_start => bit_index.OUTPUTSELECT
+tx_start => bit_index.OUTPUTSELECT
+tx_start => bit_index.OUTPUTSELECT
+tx_start => state_reg.OUTPUTSELECT
+tx_start => state_reg.OUTPUTSELECT
+tx_start => state_reg.OUTPUTSELECT
+tx_start => state_reg.OUTPUTSELECT
+tx_start => state_reg.OUTPUTSELECT
+tx_start => Selector1.IN1
+data[0] => Mux0.IN7
+data[0] => WideXor0.IN0
+data[1] => Mux0.IN6
+data[1] => WideXor0.IN1
+data[2] => Mux0.IN5
+data[2] => WideXor0.IN2
+data[3] => Mux0.IN4
+data[3] => WideXor0.IN3
+data[4] => Mux0.IN3
+data[4] => WideXor0.IN4
+data[5] => Mux0.IN2
+data[5] => WideXor0.IN5
+data[6] => Mux0.IN1
+data[6] => WideXor0.IN6
+data[7] => Mux0.IN0
+data[7] => WideXor0.IN7
+tx << tx~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_done << tx_done~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

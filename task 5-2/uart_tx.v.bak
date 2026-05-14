@@ -1,0 +1,76 @@
+module uart_tx(
+    input clk_3125,
+    input tx_start,
+    input [7:0] data,
+    output reg tx,
+    output reg tx_done
+);
+
+initial begin
+    tx = 1'b1;
+    tx_done = 1'b0;
+end
+
+localparam CLKS_PER_BIT = 27;
+
+localparam S_IDLE  = 3'd0;
+localparam S_START = 3'd1;
+localparam S_DATA  = 3'd2;
+localparam S_STOP  = 3'd3;
+
+reg [2:0] state_reg = S_IDLE;
+reg [4:0] clk_counter = 0;
+reg [2:0] bit_index = 0;
+
+always @(posedge clk_3125) begin
+    case (state_reg)
+
+        S_IDLE: begin
+            tx_done <= 1'b0;
+            tx <= 1'b1;
+            if (tx_start) begin
+                tx <= 1'b0;          // start bit
+                clk_counter <= 1;
+                bit_index <= 7;
+                state_reg <= S_START;
+            end
+        end
+
+        S_START: begin
+            if (clk_counter < CLKS_PER_BIT-1)
+                clk_counter <= clk_counter + 1;
+            else begin
+                clk_counter <= 0;
+                state_reg <= S_DATA;
+            end
+        end
+
+        S_DATA: begin
+            tx <= data[bit_index];
+
+            if (clk_counter < CLKS_PER_BIT-1)
+                clk_counter <= clk_counter + 1;
+            else begin
+                clk_counter <= 0;
+                if (bit_index > 0)
+                    bit_index <= bit_index - 1;
+                else
+                    state_reg <= S_STOP;
+            end
+        end
+
+        S_STOP: begin
+            tx <= 1'b1;
+            if (clk_counter < CLKS_PER_BIT-1)
+                clk_counter <= clk_counter + 1;
+            else begin
+                clk_counter <= 0;
+                tx_done <= 1'b1;
+                state_reg <= S_IDLE;
+            end
+        end
+
+    endcase
+end
+
+endmodule

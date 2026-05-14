@@ -1,0 +1,253 @@
+module robot_motor_top (
+		//universal 
+		input  wire clk,
+		input  wire reset,     // ACTIVE LOW
+
+		// Encoder inputs
+		input  wire EN1_A,
+		input  wire EN2_A,
+		input  wire EN1_B,
+		input  wire EN2_B,
+
+		//ir input
+	   input  wire ir_l,
+		input  wire ir_r,
+		input  wire ir_f,
+		
+		//rx & tx
+		output  tx,
+		input rx,
+		
+		//soilmoisture
+	   input  dout,
+		output adc_cs_n,din, 
+		output adc_sck,
+
+		//ultrasonic
+		input wire  ec_l,
+		input wire  ec_r,
+		input wire  ec_f,
+		output wire trig_l,
+		output wire trig_f,
+		output wire trig_r,
+		
+		//dht_11 
+		inout wire dht_inout,
+		
+		//servo
+		output wire SERVO_1,
+		output wire SERVO_2,
+	 
+		// Motor driver outputs
+		output wire ENA,
+		output wire ENB,
+		output wire IN1,
+		output wire IN2,
+		output wire IN3,
+		output wire IN4
+
+);
+	 //soilmoiture
+    wire [11:0] d_out_ch0;
+	 
+	 //tx
+	 wire [7:0] tx_data;
+	 wire tx_done;
+	 wire tx_start;
+	 wire End;
+	 //rx
+    wire [7:0] rx_data;
+    wire       rx_valid;
+
+    wire signed [31:0] count_A, count_B;
+	 wire [15:0] dis_l, dis_f, dis_r;
+	 wire irw_l, irw_f, irw_r;
+	 
+	 
+	 // dht 11 
+	 wire [7:0] T_int;
+	 wire [7:0] T_dec;
+	 wire [7:0] H_int;
+	 wire [7:0] H_dec;
+	 wire [7:0] C_sum;
+	 wire [7:0] Dht_valid;
+	 
+	 //clk_generator 
+	 wire clk_3125k;
+	 
+	 //servo
+	 wire servo_start;
+	 wire servo_stop;
+	 
+	 //start bot
+	 wire start_bot;
+	 //assign start_bot=1; //bypass BLE
+	 
+	 //send message
+	 wire send_msg;
+	 wire [3:0] mpi_count;
+	 
+	 // ---------------- 3125k clk generator ----------------
+	 clk3125 u_clk_div (
+        .clk_50M   (clk),
+        .reset     (reset),
+        .clk_3125k (clk_3125k)
+    );
+	 
+	 
+
+    // ---------------- Encoder blocks ----------------
+    encoder_decoder encA (
+        .clk   (clk),
+        .reset (reset),
+        .enc_A (EN1_A),
+        .enc_B (EN2_A),
+        .count (count_A)
+    );
+
+    encoder_decoder encB (
+        .clk   (clk),
+        .reset (reset),
+        .enc_A (EN1_B),
+        .enc_B (EN2_B),
+        .count (count_B)
+    );
+	 
+	 
+
+   
+  
+
+    // ---------------- Motor controller ----------------
+    motor_controller motor_ctrl (
+				.clk     (clk),
+				.reset   (reset),
+				.count_A (count_A),
+				.count_B (count_B),
+				.enable  (start_bot), //added enable
+				.dis_l   (dis_l),
+				.dis_r   (dis_r),
+				.dis_f   (dis_f),
+				.ir_l    (irw_l),
+				.ir_f    (irw_f),
+				.ir_r    (irw_r),
+				.ENA     (ENA),
+				.ENB     (ENB),
+				.IN1     (IN1),
+				.IN2     (IN2),
+				.IN3     (IN3),
+				.IN4     (IN4),
+				.servo_start(servo_start),
+				.servo_stop (servo_stop),
+				.End     (End),
+				.mpi_count(mpi_count)
+		);
+	 
+	 
+	 // ----------------integrated ir and us ----------------
+	 ir_and_us path_ctrl(
+				.ir_in_left		(ir_l),
+				.ir_in_front	(ir_f),
+				.ir_in_right	(ir_r),
+				.echo_rx_l		(ec_l),
+				.echo_rx_f		(ec_f),
+				.echo_rx_r		(ec_r),
+				.clk 				(clk),
+				.reset			(reset),
+				.trig_l			(trig_l),
+				.trig_f			(trig_f),
+				.trig_r			(trig_r), 
+				.dis_l			(dis_l),
+				.dis_f			(dis_f),
+				.dis_r			(dis_r),
+				.ir_l    (irw_l),
+				.ir_f    (irw_f),
+				.ir_r    (irw_r),
+				.test_mpi (mpi_detected)
+			
+		);
+		
+		// ---------------- dht11 sensor  ----------------
+		 t2a_dht u_dht(
+				.clk_50M    (clk),
+				.reset      (reset),
+				.sensor     (dht_inout),
+			   .T_integral (T_int),
+				.RH_integral(H_int),
+				.T_decimal  (T_dec),
+				.RH_decimal (H_dec),
+				.Checksum   (C_sum),
+				.data_valid_dht (dht_valid)
+		);
+		
+		// ---------------- soil_moisture sensor  ----------------
+		moisture_sensor   ms(
+            .dout       (dout), 
+            .clk50      (clk),
+            .adc_cs_n   (adc_cs_n), 
+            .din        (din), 
+            .adc_sck    (adc_sck),
+            .d_out_ch0  (d_out_ch0)  
+		);
+		
+		// ---------------- uart_tx  ----------------
+		 uart_tx     uart(
+				.clk_3125     (clk_3125k),
+				.reset        (reset),
+				.tx_start     (tx_start),
+				.data         (tx_data),
+				.tx	        (tx),
+				.tx_done      (tx_done),
+				
+		  ); 
+		  
+		  // ---------------- msg_sender  ----------------
+		  msg_sender msg_fsm (
+				  .clk_3125       (clk_3125k),
+				  .reset          (reset),
+				  .mpi_detected   (send_msg),
+				  .T_integral     (T_int),
+				  .T_decimal      (T_dec),
+				  .RH_integral    (H_int),
+				  .RH_decimal     (H_dec),
+				  .d_out_ch0      (d_out_ch0),
+				  .tx_data        (tx_data),
+				  .tx_start       (tx_start),
+				  .tx_done        (tx_done),
+				  .End            (End),
+				  .mpi_count      (mpi_count)
+			 );
+
+			// ----------------servo ----------------
+			 servo u_servo (
+				 .clk_50M      (clk),
+				 .reset        (reset),
+				 .SERVO_1      (SERVO_1),
+				 .SERVO_2      (SERVO_2),
+				 .mpi_detected (servo_start & start_bot),  //added & start_bot
+				 .servo_stop   (servo_stop),
+				 .send         (send_msg)
+			 );
+			 
+			// ----------------uart_rx ----------------
+			 uart_rx u_uart_rx (
+				  .clk      (clk),
+				  .reset_n  (reset),
+				  .rx       (rx),
+				  .rx_data  (rx_data)
+				  //.rx_valid (rx_valid)
+			 );
+			 
+			 uart_cmd_parser u_uart_cmd (
+              .clk       (clk),
+              .reset     (reset),
+              .rx_data   (rx_data),
+              //.rx_valid  (rx_valid),
+              .bot_start (start_bot) //start_bot
+          );
+
+			 
+			 //testing
+			// wire mpi_dtected , uart_tick; 
+			 //test_mpi mpi (clk, ir_l, ir_f, ir_r, uart_tick);
+endmodule

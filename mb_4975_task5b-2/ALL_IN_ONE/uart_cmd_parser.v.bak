@@ -1,0 +1,47 @@
+module uart_cmd_parser (
+    input  wire        clk,
+    input  wire        reset,
+
+    input  wire [7:0]  rx_data,
+    input  wire        rx_valid,
+
+    output reg         start_bot
+);
+
+    localparam S_IDLE = 3'd0;
+    localparam S_S    = 3'd1;
+    localparam S_T1   = 3'd2;
+    localparam S_A    = 3'd3;
+    localparam S_R    = 3'd4;
+    localparam S_T2   = 3'd5;
+
+    reg [2:0] state;
+
+    always @(posedge clk or negedge reset) begin
+        if (!reset) begin
+            state     <= S_IDLE;
+            start_bot <= 1'b0;
+        end
+        else if (start_bot) begin
+            start_bot <= start_bot; // latch once detected
+        end
+        else if (rx_valid) begin
+            case (state)
+
+                S_IDLE: state <= (rx_data == "S") ? S_S  : S_IDLE;
+                S_S:    state <= (rx_data == "T") ? S_T1 : S_IDLE;
+                S_T1:   state <= (rx_data == "A") ? S_A  : S_IDLE;
+                S_A:    state <= (rx_data == "R") ? S_R  : S_IDLE;
+                S_R:    state <= (rx_data == "T") ? S_T2 : S_IDLE;
+
+                S_T2: begin
+                    start_bot <= 1'b1;  // COMMAND ACCEPTED
+                    state     <= S_IDLE;
+                end
+
+                default: state <= S_IDLE;
+            endcase
+        end
+    end
+
+endmodule

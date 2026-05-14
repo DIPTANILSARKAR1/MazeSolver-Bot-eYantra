@@ -1,0 +1,7 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,ir_and_us:path_ctrl|us_sensor:us_f|lpm_mult:Mult0|mult_ngt:auto_generated|mac_out4,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,ir_and_us:path_ctrl|us_sensor:us_f|lpm_mult:Mult0|mult_ngt:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,ir_and_us:path_ctrl|us_sensor:us_l|lpm_mult:Mult0|mult_ngt:auto_generated|mac_out4,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,ir_and_us:path_ctrl|us_sensor:us_l|lpm_mult:Mult0|mult_ngt:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,ir_and_us:path_ctrl|us_sensor:us_r|lpm_mult:Mult0|mult_ngt:auto_generated|mac_out4,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,ir_and_us:path_ctrl|us_sensor:us_r|lpm_mult:Mult0|mult_ngt:auto_generated|mac_out2,

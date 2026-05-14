@@ -1,0 +1,65 @@
+module dht11 (
+    input  wire clk,
+    input  wire reset,
+    inout  wire dht_io,
+    output reg  [7:0] temp,
+    output reg  [7:0] hum,
+    output reg        done
+);
+
+    reg dht_out;
+    assign dht_io = dht_out ? 1'b0 : 1'bz;
+
+    reg [2:0] state;
+    reg [31:0] timer;
+
+    localparam IDLE  = 3'd0;
+    localparam START = 3'd1;
+    localparam WAIT  = 3'd2;
+    localparam READ  = 3'd3;
+    localparam DONE  = 3'd4;
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            state <= IDLE;
+            timer <= 0;
+            dht_out <= 1;
+            done <= 0;
+        end else begin
+            case (state)
+
+                IDLE: begin
+                    dht_out <= 1;
+                    timer <= 0;
+                    done <= 0;
+                    state <= START;
+                end
+
+                START: begin
+                    dht_out <= 0;   // pull low
+                    if (timer > 1_000_000) begin
+                        timer <= 0;
+                        dht_out <= 1;
+                        state <= WAIT;
+                    end else timer <= timer + 1;
+                end
+
+                WAIT: begin
+                    if (timer > 2_000_000) begin
+                        timer <= 0;
+                        // fake values for demo
+                        hum  <= 8'd55;
+                        temp <= 8'd27;
+                        state <= DONE;
+                    end else timer <= timer + 1;
+                end
+
+                DONE: begin
+                    done <= 1;
+                end
+
+            endcase
+        end
+    end
+
+endmodule

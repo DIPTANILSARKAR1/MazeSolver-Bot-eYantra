@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at motor_controller.v(27): object "L" differs only in case from object "l" in the same scope File: C:/Users/dutta/OneDrive/Desktop/motors/motor_controller.v Line: 27
+Info (10281): Verilog HDL Declaration information at motor_controller.v(28): object "R" differs only in case from object "r" in the same scope File: C:/Users/dutta/OneDrive/Desktop/motors/motor_controller.v Line: 28

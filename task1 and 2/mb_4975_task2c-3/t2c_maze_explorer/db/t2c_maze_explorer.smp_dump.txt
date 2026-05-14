@@ -1,0 +1,14 @@
+
+State Machine - |t2c_maze_explorer|facing
+Name facing.W facing.S facing.E facing.N 
+facing.N 0 0 0 0 
+facing.E 0 0 1 1 
+facing.S 0 1 0 1 
+facing.W 1 0 0 1 
+
+State Machine - |t2c_maze_explorer|state
+Name state.RIGHT_HAND_RULE state.AT_END state.MOVE state.START 
+state.START 0 0 0 0 
+state.MOVE 0 0 1 1 
+state.AT_END 0 1 0 1 
+state.RIGHT_HAND_RULE 1 0 0 1 

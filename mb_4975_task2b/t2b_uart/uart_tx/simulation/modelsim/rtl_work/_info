@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/mb_4975_task2b/t2b_uart/uart_tx/simulation/modelsim
+vtb
+Z1 !s110 1763396751
+!i10b 1
+!s100 E0IfiEI7f39:NeWLg:c=O1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I5<MloFz?Oz=OH>?K<0JoA3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1759302883
+8D:/mb_4975_task2b/t2b_uart/uart_tx/.test/tb.v
+FD:/mb_4975_task2b/t2b_uart/uart_tx/.test/tb.v
+!i122 1
+L0 3 133
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1763396751.000000
+!s107 D:/mb_4975_task2b/t2b_uart/uart_tx/.test/tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task2b/t2b_uart/uart_tx/.test|D:/mb_4975_task2b/t2b_uart/uart_tx/.test/tb.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+D:/mb_4975_task2b/t2b_uart/uart_tx/.test
+Z6 tCvgOpt 0
+vuart_tx
+R1
+!i10b 1
+!s100 Skeno^`ASG5C@kQ=WRK]02
+R2
+IjR>ka27W2C`Z`0zgSOii;0
+R3
+R0
+w1763396726
+8D:/mb_4975_task2b/t2b_uart/uart_tx/code/uart_tx.v
+FD:/mb_4975_task2b/t2b_uart/uart_tx/code/uart_tx.v
+!i122 0
+L0 1 91
+R4
+r1
+!s85 0
+31
+!s108 1763396750.000000
+!s107 D:/mb_4975_task2b/t2b_uart/uart_tx/code/uart_tx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task2b/t2b_uart/uart_tx/code|D:/mb_4975_task2b/t2b_uart/uart_tx/code/uart_tx.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+D:/mb_4975_task2b/t2b_uart/uart_tx/code
+R6

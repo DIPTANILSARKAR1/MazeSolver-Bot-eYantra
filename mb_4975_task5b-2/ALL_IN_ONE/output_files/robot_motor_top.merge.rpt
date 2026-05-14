@@ -1,0 +1,704 @@
+Partition Merge report for robot_motor_top
+Tue Jan 20 00:01:18 2026
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Connections to In-System Debugging Instance "auto_signaltap_0"
+  5. Partition Merge Partition Statistics
+  6. Partition Merge Partition Pin Processing
+  7. Partition Merge Resource Usage Summary
+  8. Partition Merge RAM Summary
+  9. Partition Merge DSP Block Usage Summary
+ 10. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Partition Merge Summary                                                          ;
++------------------------------------+---------------------------------------------+
+; Partition Merge Status             ; Successful - Tue Jan 20 00:01:18 2026       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; robot_motor_top                             ;
+; Top-level Entity Name              ; robot_motor_top                             ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 2,305                                       ;
+;     Total combinational functions  ; 1,140                                       ;
+;     Dedicated logic registers      ; 1,835                                       ;
+; Total registers                    ; 1835                                        ;
+; Total pins                         ; 22                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 12,160                                      ;
+; Embedded Multiplier 9-bit elements ; 12                                          ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                            ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents             ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Top                            ; User-created   ; Source File       ; Source File            ;                                ;
+; sld_hub:auto_hub               ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_hub:auto_hub               ;
+; sld_signaltap:auto_signaltap_0 ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_signaltap:auto_signaltap_0 ;
+; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; Source File            ; hard_block:auto_generated_inst ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                                                                                                                ;
++--------------------------------------------------------------+---------------+-----------+--------------------------------+-------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+; Name                                                         ; Type          ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                                                  ; Details                                                                                  ;
++--------------------------------------------------------------+---------------+-----------+--------------------------------+-------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+; EN1_A                                                        ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; EN1_A                                                              ; N/A                                                                                      ;
+; EN1_A                                                        ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; EN1_A                                                              ; N/A                                                                                      ;
+; EN1_B                                                        ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; EN1_B                                                              ; N/A                                                                                      ;
+; EN1_B                                                        ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; EN1_B                                                              ; N/A                                                                                      ;
+; EN2_A                                                        ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; EN2_A                                                              ; N/A                                                                                      ;
+; EN2_A                                                        ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; EN2_A                                                              ; N/A                                                                                      ;
+; EN2_B                                                        ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; EN2_B                                                              ; N/A                                                                                      ;
+; EN2_B                                                        ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; EN2_B                                                              ; N/A                                                                                      ;
+; ENA                                                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_controller:motor_ctrl|pwm_generator:pp1|pwm_signal~_wirecell ; N/A                                                                                      ;
+; ENA                                                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_controller:motor_ctrl|pwm_generator:pp1|pwm_signal~_wirecell ; N/A                                                                                      ;
+; ENB                                                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_controller:motor_ctrl|pwm_generator:pp2|pwm_signal~_wirecell ; N/A                                                                                      ;
+; ENB                                                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; motor_controller:motor_ctrl|pwm_generator:pp2|pwm_signal~_wirecell ; N/A                                                                                      ;
+; clk                                                          ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; clk                                                                ; N/A                                                                                      ;
+; encoder_decoder:encA|count[0]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[0]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[0]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[0]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[10]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[10]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[10]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[10]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[11]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[11]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[11]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[11]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[12]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[12]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[12]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[12]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[13]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[13]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[13]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[13]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[14]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[14]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[14]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[14]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[15]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[15]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[15]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[15]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[16]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[16]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[16]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[16]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[17]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[17]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[17]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[17]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[18]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[18]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[18]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[18]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[19]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[19]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[19]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[19]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[1]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[1]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[1]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[1]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[20]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[20]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[20]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[20]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[21]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[21]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[21]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[21]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[22]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[22]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[22]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[22]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[23]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[23]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[23]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[23]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[24]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[24]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[24]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[24]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[25]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[25]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[25]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[25]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[26]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[26]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[26]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[26]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[27]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[27]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[27]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[27]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[28]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[28]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[28]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[28]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[29]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[29]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[29]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[29]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[2]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[2]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[2]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[2]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[30]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[30]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[30]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[30]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[31]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[31]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[31]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[31]                                     ; N/A                                                                                      ;
+; encoder_decoder:encA|count[3]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[3]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[3]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[3]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[4]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[4]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[4]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[4]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[5]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[5]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[5]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[5]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[6]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[6]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[6]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[6]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[7]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[7]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[7]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[7]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[8]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[8]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[8]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[8]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[9]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[9]                                      ; N/A                                                                                      ;
+; encoder_decoder:encA|count[9]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encA|count[9]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[0]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[0]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[0]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[0]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[10]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[10]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[10]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[10]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[11]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[11]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[11]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[11]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[12]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[12]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[12]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[12]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[13]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[13]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[13]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[13]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[14]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[14]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[14]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[14]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[15]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[15]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[15]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[15]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[16]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[16]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[16]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[16]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[17]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[17]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[17]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[17]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[18]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[18]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[18]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[18]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[19]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[19]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[19]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[19]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[1]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[1]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[1]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[1]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[20]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[20]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[20]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[20]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[21]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[21]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[21]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[21]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[22]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[22]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[22]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[22]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[23]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[23]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[23]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[23]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[24]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[24]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[24]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[24]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[25]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[25]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[25]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[25]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[26]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[26]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[26]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[26]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[27]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[27]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[27]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[27]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[28]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[28]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[28]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[28]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[29]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[29]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[29]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[29]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[2]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[2]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[2]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[2]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[30]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[30]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[30]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[30]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[31]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[31]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[31]                               ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[31]                                     ; N/A                                                                                      ;
+; encoder_decoder:encB|count[3]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[3]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[3]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[3]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[4]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[4]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[4]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[4]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[5]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[5]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[5]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[5]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[6]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[6]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[6]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[6]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[7]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[7]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[7]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[7]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[8]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[8]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[8]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[8]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[9]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[9]                                      ; N/A                                                                                      ;
+; encoder_decoder:encB|count[9]                                ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; encoder_decoder:encB|count[9]                                      ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|gnd                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND                                ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                ; N/A                                                                                      ;
+; auto_signaltap_0|vcc                                         ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC                                ; N/A                                                                                      ;
+; ec_f                                                         ; post-fitting  ; connected ; Top                            ; post-synthesis    ; ec_f                                                               ; N/A                                                                                      ;
+; ec_f                                                         ; post-fitting  ; connected ; Top                            ; post-synthesis    ; ec_f                                                               ; N/A                                                                                      ;
+; ec_l                                                         ; post-fitting  ; connected ; Top                            ; post-synthesis    ; ec_l                                                               ; N/A                                                                                      ;
+; ec_l                                                         ; post-fitting  ; connected ; Top                            ; post-synthesis    ; ec_l                                                               ; N/A                                                                                      ;
+; ec_r                                                         ; post-fitting  ; connected ; Top                            ; post-synthesis    ; ec_r                                                               ; N/A                                                                                      ;
+; ec_r                                                         ; post-fitting  ; connected ; Top                            ; post-synthesis    ; ec_r                                                               ; N/A                                                                                      ;
+; path_controller:path_ctrl|ir_sensor:ir_f|obstacle            ; post-fitting  ; missing   ; Top                            ; post-synthesis    ; GND                                                                ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; path_controller:path_ctrl|ir_sensor:ir_f|obstacle            ; post-fitting  ; missing   ; Top                            ; post-synthesis    ; GND                                                                ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; path_controller:path_ctrl|ir_sensor:ir_l|obstacle            ; post-fitting  ; missing   ; Top                            ; post-synthesis    ; GND                                                                ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; path_controller:path_ctrl|ir_sensor:ir_l|obstacle            ; post-fitting  ; missing   ; Top                            ; post-synthesis    ; GND                                                                ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; path_controller:path_ctrl|ir_sensor:ir_r|obstacle            ; post-fitting  ; missing   ; Top                            ; post-synthesis    ; GND                                                                ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; path_controller:path_ctrl|ir_sensor:ir_r|obstacle            ; post-fitting  ; missing   ; Top                            ; post-synthesis    ; GND                                                                ; The post-fitting netlist is not being used.  Set the partition's netlist type to source. ;
+; path_controller:path_ctrl|turn[0]                            ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|turn[0]                                  ; N/A                                                                                      ;
+; path_controller:path_ctrl|turn[0]                            ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|turn[0]                                  ; N/A                                                                                      ;
+; path_controller:path_ctrl|turn[1]                            ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|turn[1]                                  ; N/A                                                                                      ;
+; path_controller:path_ctrl|turn[1]                            ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|turn[1]                                  ; N/A                                                                                      ;
+; path_controller:path_ctrl|turn[2]                            ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|turn[2]                                  ; N/A                                                                                      ;
+; path_controller:path_ctrl|turn[2]                            ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|turn[2]                                  ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[0]~16  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[0]~16        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[0]~16  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[0]~16        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[10]~36 ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[10]~36       ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[10]~36 ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[10]~36       ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[11]~38 ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[11]~38       ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[11]~38 ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[11]~38       ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[1]~18  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[1]~18        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[1]~18  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[1]~18        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[2]~20  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[2]~20        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[2]~20  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[2]~20        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[3]~22  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[3]~22        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[3]~22  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[3]~22        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[4]~24  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[4]~24        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[4]~24  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[4]~24        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[5]~26  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[5]~26        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[5]~26  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[5]~26        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[6]~28  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[6]~28        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[6]~28  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[6]~28        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[7]~30  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[7]~30        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[7]~30  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[7]~30        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[8]~32  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[8]~32        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[8]~32  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[8]~32        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[9]~34  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[9]~34        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|distance_out[9]~34  ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|distance_out[9]~34        ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|trig                ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|trig                      ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_f|trig                ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_f|trig                      ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_l|trig                ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_l|trig                      ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_l|trig                ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_l|trig                      ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_r|trig                ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_r|trig                      ; N/A                                                                                      ;
+; path_controller:path_ctrl|us_sensor:us_r|trig                ; post-fitting  ; connected ; Top                            ; post-synthesis    ; path_controller:path_ctrl|us_sensor:us_r|trig                      ; N/A                                                                                      ;
+; auto_stp_external_storage_qualifier                          ; dynamic pin   ; connected ; Top                            ; post-synthesis    ; auto_stp_external_storage_qualifier                                ; N/A                                                                                      ;
++--------------------------------------------------------------+---------------+-----------+--------------------------------+-------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                                                                    ;
++---------------------------------------------+------+------------------+--------------------------------+--------------------------------+
+; Statistic                                   ; Top  ; sld_hub:auto_hub ; sld_signaltap:auto_signaltap_0 ; hard_block:auto_generated_inst ;
++---------------------------------------------+------+------------------+--------------------------------+--------------------------------+
+; Estimated Total logic elements              ; 510  ; 153              ; 1645                           ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Total combinational functions               ; 401  ; 127              ; 612                            ; 0                              ;
+; Logic element usage by number of LUT inputs ;      ;                  ;                                ;                                ;
+;     -- 4 input functions                    ; 94   ; 55               ; 337                            ; 0                              ;
+;     -- 3 input functions                    ; 171  ; 35               ; 175                            ; 0                              ;
+;     -- <=2 input functions                  ; 136  ; 37               ; 100                            ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Logic elements by mode                      ;      ;                  ;                                ;                                ;
+;     -- normal mode                          ; 167  ; 119              ; 550                            ; 0                              ;
+;     -- arithmetic mode                      ; 234  ; 8                ; 62                             ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Total registers                             ; 335  ; 90               ; 1410                           ; 0                              ;
+;     -- Dedicated logic registers            ; 335  ; 90               ; 1410                           ; 0                              ;
+;     -- I/O registers                        ; 0    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Virtual pins                                ; 0    ; 0                ; 0                              ; 0                              ;
+; I/O pins                                    ; 22   ; 0                ; 0                              ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 12   ; 0                ; 0                              ; 0                              ;
+; Total memory bits                           ; 0    ; 0                ; 12160                          ; 0                              ;
+; Total RAM block bits                        ; 0    ; 0                ; 0                              ; 0                              ;
+; JTAG                                        ; 1    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Connections                                 ;      ;                  ;                                ;                                ;
+;     -- Input Connections                    ; 1    ; 133              ; 2055                           ; 0                              ;
+;     -- Registered Input Connections         ; 0    ; 101              ; 1623                           ; 0                              ;
+;     -- Output Connections                   ; 1916 ; 239              ; 34                             ; 0                              ;
+;     -- Registered Output Connections        ; 140  ; 239              ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Internal Connections                        ;      ;                  ;                                ;                                ;
+;     -- Total Connections                    ; 4627 ; 926              ; 7873                           ; 0                              ;
+;     -- Registered Connections               ; 893  ; 699              ; 5857                           ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; External Connections                        ;      ;                  ;                                ;                                ;
+;     -- Top                                  ; 0    ; 122              ; 1795                           ; 0                              ;
+;     -- sld_hub:auto_hub                     ; 122  ; 20               ; 230                            ; 0                              ;
+;     -- sld_signaltap:auto_signaltap_0       ; 1795 ; 230              ; 64                             ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Partition Interface                         ;      ;                  ;                                ;                                ;
+;     -- Input Ports                          ; 16   ; 45               ; 351                            ; 0                              ;
+;     -- Output Ports                         ; 74   ; 62               ; 203                            ; 0                              ;
+;     -- Bidir Ports                          ; 0    ; 0                ; 0                              ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Registered Ports                            ;      ;                  ;                                ;                                ;
+;     -- Registered Input Ports               ; 0    ; 4                ; 195                            ; 0                              ;
+;     -- Registered Output Ports              ; 0    ; 29               ; 189                            ; 0                              ;
+;                                             ;      ;                  ;                                ;                                ;
+; Port Connectivity                           ;      ;                  ;                                ;                                ;
+;     -- Input Ports driven by GND            ; 0    ; 0                ; 23                             ; 0                              ;
+;     -- Output Ports driven by GND           ; 0    ; 28               ; 2                              ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0    ; 0                ; 15                             ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0    ; 0                ; 1                              ; 0                              ;
+;     -- Input Ports with no Source           ; 0    ; 25               ; 97                             ; 0                              ;
+;     -- Output Ports with no Source          ; 0    ; 0                ; 0                              ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0    ; 30               ; 111                            ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0    ; 29               ; 191                            ; 0                              ;
++---------------------------------------------+------+------------------+--------------------------------+--------------------------------+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Pin Processing                                                                                       ;
++------------------------------------------------------+--------------------------------+---------------+----------+-------------+
+; Name                                                 ; Partition                      ; Type          ; Location ; Status      ;
++------------------------------------------------------+--------------------------------+---------------+----------+-------------+
+; EN1_A                                                ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- EN1_A                                         ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- EN1_A~input                                   ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; EN1_B                                                ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- EN1_B                                         ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- EN1_B~input                                   ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; EN2_A                                                ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- EN2_A                                         ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- EN2_A~input                                   ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; EN2_B                                                ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- EN2_B                                         ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- EN2_B~input                                   ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; ENA                                                  ; Top                            ; Output Port   ; n/a      ;             ;
+;     -- ENA                                           ; Top                            ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- ENA~output                                    ; Top                            ; Output Buffer ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; ENB                                                  ; Top                            ; Output Port   ; n/a      ;             ;
+;     -- ENB                                           ; Top                            ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- ENB~output                                    ; Top                            ; Output Buffer ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; IN1                                                  ; Top                            ; Output Port   ; n/a      ;             ;
+;     -- IN1                                           ; Top                            ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- IN1~output                                    ; Top                            ; Output Buffer ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; IN2                                                  ; Top                            ; Output Port   ; n/a      ;             ;
+;     -- IN2                                           ; Top                            ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- IN2~output                                    ; Top                            ; Output Buffer ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; IN3                                                  ; Top                            ; Output Port   ; n/a      ;             ;
+;     -- IN3                                           ; Top                            ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- IN3~output                                    ; Top                            ; Output Buffer ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; IN4                                                  ; Top                            ; Output Port   ; n/a      ;             ;
+;     -- IN4                                           ; Top                            ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- IN4~output                                    ; Top                            ; Output Buffer ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; altera_reserved_tck                                  ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- altera_reserved_tck                           ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tck~input                     ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; altera_reserved_tdi                                  ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- altera_reserved_tdi                           ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tdi~input                     ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; altera_reserved_tdo                                  ; Top                            ; Output Port   ; n/a      ;             ;
+;     -- altera_reserved_tdo                           ; Top                            ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tdo~output                    ; Top                            ; Output Buffer ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; altera_reserved_tms                                  ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- altera_reserved_tms                           ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tms~input                     ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; auto_stp_external_storage_qualifier                  ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- auto_stp_external_storage_qualifier           ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- auto_stp_external_storage_qualifier~input     ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;     -- sld_signaltap:auto_signaltap_0|storage_enable ; sld_signaltap:auto_signaltap_0 ; Input Port    ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; clk                                                  ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- clk                                           ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- clk~input                                     ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; ec_f                                                 ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- ec_f                                          ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- ec_f~input                                    ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; ec_l                                                 ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- ec_l                                          ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- ec_l~input                                    ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; ec_r                                                 ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- ec_r                                          ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- ec_r~input                                    ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; ir_f                                                 ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- ir_f                                          ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- ir_f~input                                    ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; ir_l                                                 ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- ir_l                                          ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- ir_l~input                                    ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; ir_r                                                 ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- ir_r                                          ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- ir_r~input                                    ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_0_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_10_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_11_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_12_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_13_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_14_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_15_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_16_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_17_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_18_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_19_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_1_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_20_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_21_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_22_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_23_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_24_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_25_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_26_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_27_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_28_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_29_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_2_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_30_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_31_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_3_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_4_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_5_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_6_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_7_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_8_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encA_count_9_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_0_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_10_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_11_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_12_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_13_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_14_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_15_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_16_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_17_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_18_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_19_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_1_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_20_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_21_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_22_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_23_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_24_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_25_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_26_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_27_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_28_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_29_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_2_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_30_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_31_                            ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_3_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_4_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_5_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_6_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_7_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_8_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; pre_syn.bp.encB_count_9_                             ; Top                            ; Output Port   ; n/a      ;             ;
+;                                                      ;                                ;               ;          ;             ;
+; reset                                                ; Top                            ; Input Port    ; n/a      ;             ;
+;     -- reset                                         ; Top                            ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- reset~input                                   ; Top                            ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; trig_f                                               ; Top                            ; Output Port   ; n/a      ;             ;
+;     -- trig_f                                        ; Top                            ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- trig_f~output                                 ; Top                            ; Output Buffer ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; trig_l                                               ; Top                            ; Output Port   ; n/a      ;             ;
+;     -- trig_l                                        ; Top                            ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- trig_l~output                                 ; Top                            ; Output Buffer ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
+; trig_r                                               ; Top                            ; Output Port   ; n/a      ;             ;
+;     -- trig_r                                        ; Top                            ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- trig_r~output                                 ; Top                            ; Output Buffer ; Unplaced ; Synthesized ;
+;                                                      ;                                ;               ;          ;             ;
++------------------------------------------------------+--------------------------------+---------------+----------+-------------+
+
+
++---------------------------------------------------------+
+; Partition Merge Resource Usage Summary                  ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 2,305     ;
+;                                             ;           ;
+; Total combinational functions               ; 1140      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 486       ;
+;     -- 3 input functions                    ; 381       ;
+;     -- <=2 input functions                  ; 273       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 836       ;
+;     -- arithmetic mode                      ; 304       ;
+;                                             ;           ;
+; Total registers                             ; 1835      ;
+;     -- Dedicated logic registers            ; 1835      ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 22        ;
+; Total memory bits                           ; 12160     ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 12        ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 1288      ;
+; Total fan-out                               ; 11003     ;
+; Average fan-out                             ; 3.51      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge RAM Summary                                                                                                                                                                                                                                                                                ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+; Name                                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF  ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_j524:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 128          ; 95           ; 128          ; 95           ; 12160 ; None ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
+
+
++-----------------------------------------------------+
+; Partition Merge DSP Block Usage Summary             ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 6           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 12          ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 6           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Partition Merge
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Tue Jan 20 00:01:17 2026
+Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off N_20MOTOR -c robot_motor_top --merge=on
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (35007): Using synthesis netlist for partition "Top"
+Info (35007): Using synthesis netlist for partition "sld_hub:auto_hub"
+Info (35007): Using synthesis netlist for partition "sld_signaltap:auto_signaltap_0"
+Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 216 of its 222 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 6 missing sources or connections.
+Info (35002): Resolved and merged 3 partition(s)
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Critical Warning (138067): Current license file does not support incremental compilation. The Quartus Prime software removes all the user-specified design partitions in the design automatically.
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ir_l" File: C:/Users/dutta/OneDrive/Desktop/motors/robot_motor_top.v Line: 12
+    Warning (15610): No output dependent on input pin "ir_r" File: C:/Users/dutta/OneDrive/Desktop/motors/robot_motor_top.v Line: 13
+    Warning (15610): No output dependent on input pin "ir_f" File: C:/Users/dutta/OneDrive/Desktop/motors/robot_motor_top.v Line: 14
+Info (21057): Implemented 2469 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 2335 logic cells
+    Info (21064): Implemented 95 RAM segments
+    Info (21062): Implemented 12 DSP elements
+Info: Quartus Prime Partition Merge was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4705 megabytes
+    Info: Processing ended: Tue Jan 20 00:01:18 2026
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

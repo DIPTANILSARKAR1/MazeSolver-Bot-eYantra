@@ -1,0 +1,27 @@
+module encoder_decoder (
+    input  wire clk,
+    input  wire reset,
+    input  wire enc_A,   // EN1
+    input  wire enc_B,   // EN2
+    output reg signed [31:0] position
+);
+
+    reg enc_A_d;
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            enc_A_d  <= 0;
+            position <= 0;
+        end else begin
+            enc_A_d <= enc_A;
+
+            // Detect rising edge of A
+            if (enc_A && !enc_A_d) begin
+                if (enc_B)
+                    position <= position - 1; // CCW
+                else
+                    position <= position + 1; // CW
+            end
+        end
+    end
+endmodule

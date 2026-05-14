@@ -1,0 +1,29 @@
+module mpi_detection(
+		input ir_l,
+		input ir_f,
+		input ir_r,
+		output mpi_detected
+);
+
+ir_sensor ir_left (
+        .ir_in   (ir_l),
+        .clk     (clk_50M),
+        .reset   (reset),
+        .obstacle(obstacle_left)
+    );
+
+    ir_sensor ir_right (
+        .ir_in   (ir_r),
+        .clk     (clk_50M),
+        .reset   (reset),
+        .obstacle(obstacle_right)
+    );
+
+    ir_sensor ir_front(
+        .ir_in   (ir_f),
+        .clk     (clk_50M),
+        .reset   (reset),
+        .obstacle(obstacle_front)
+    );
+
+endmodule 

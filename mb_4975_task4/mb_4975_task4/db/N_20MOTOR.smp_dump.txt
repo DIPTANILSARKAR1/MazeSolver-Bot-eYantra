@@ -1,0 +1,28 @@
+
+State Machine - |robot_motor_top|path_controller:path_ctrl|us_sensor:us_f|state
+Name state.s3 state.s2 state.s1 state.s0 
+state.s0 0 0 0 0 
+state.s1 0 0 1 1 
+state.s2 0 1 0 1 
+state.s3 1 0 0 1 
+
+State Machine - |robot_motor_top|path_controller:path_ctrl|us_sensor:us_r|state
+Name state.s3 state.s2 state.s1 state.s0 
+state.s0 0 0 0 0 
+state.s1 0 0 1 1 
+state.s2 0 1 0 1 
+state.s3 1 0 0 1 
+
+State Machine - |robot_motor_top|path_controller:path_ctrl|us_sensor:us_l|state
+Name state.s3 state.s2 state.s1 state.s0 
+state.s0 0 0 0 0 
+state.s1 0 0 1 1 
+state.s2 0 1 0 1 
+state.s3 1 0 0 1 
+
+State Machine - |robot_motor_top|motor_controller:motor_ctrl|state
+Name state.RIGHT state.LEFT state.FORWARD state.UTURN 
+state.FORWARD 0 0 0 0 
+state.LEFT 0 1 1 0 
+state.RIGHT 1 0 1 0 
+state.UTURN 0 0 1 1 

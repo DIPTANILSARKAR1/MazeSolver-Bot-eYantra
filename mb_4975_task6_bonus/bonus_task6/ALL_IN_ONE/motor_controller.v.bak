@@ -1,0 +1,61 @@
+module motor_controller (
+    input  wire clk,
+    input  wire reset,
+
+    // Speed control (PWM duty)
+    input  wire [7:0] speed_A,
+    input  wire [7:0] speed_B,
+
+    // Direction control
+    // 00 = Stop
+    // 01 = CW
+    // 10 = CCW
+    // 11 = Brake
+    input  wire [1:0] dir_A,
+    input  wire [1:0] dir_B,
+
+    // Motor driver outputs
+    output wire ENA,
+    output wire ENB,
+    output reg  IN1,
+    output reg  IN2,
+    output reg  IN3,
+    output reg  IN4
+);
+
+    // PWM instances
+   pwm_generator pwmA (
+        .clk_3125KHz(clk_3125KHz),
+        .duty_cycle(speed_A),
+        .clk_195KHz(clk_195k_A),
+        .pwm_signal(pwm_A)
+    );
+
+    // PWM for Motor B
+    pwm_generator pwmB (
+        .clk_3125KHz(clk_3125KHz),
+        .duty_cycle(speed_B),
+        .clk_195KHz(clk_195k_B),
+        .pwm_signal(pwm_B)
+    );
+
+    // Direction logic
+    always @(*) begin
+        // Motor A
+        case (dir_A)
+            2'b00: begin IN1 = 0; IN2 = 0; end // Stop
+            2'b01: begin IN1 = 1; IN2 = 0; end // CW
+            2'b10: begin IN1 = 0; IN2 = 1; end // CCW
+            2'b11: begin IN1 = 1; IN2 = 1; end // Brake
+        endcase
+
+        // Motor B
+        case (dir_B)
+            2'b00: begin IN3 = 0; IN4 = 0; end
+            2'b01: begin IN3 = 1; IN4 = 0; end
+            2'b10: begin IN3 = 0; IN4 = 1; end
+            2'b11: begin IN3 = 1; IN4 = 1; end
+        endcase
+    end
+
+endmodule

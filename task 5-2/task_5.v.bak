@@ -1,0 +1,117 @@
+module task_5 (
+    input  wire        clk_50M,
+    input  wire        reset,
+
+    // -------- Sensors ----------
+    input  wire        mpi_flag,        // digital flag detection
+    input  wire [11:0] soil_adc,        // soil moisture ADC
+    input  wire        dht_data,         // DHT11 single wire
+
+    // -------- UART --------------
+    output wire        uart_tx
+);
+    wire clk_3125;
+    uart_clk_div u_div (
+        .clk_50M(clk_50M),
+        .clk_3125(clk_3125)
+    );
+    wire        tx_start;
+    wire [7:0]  tx_data;
+    wire        tx_done;
+
+    uart_tx u_tx (
+        .clk_3125(clk_3125),
+        .tx_start(tx_start),
+        .data(tx_data),
+        .tx(uart_tx),
+        .tx_done(tx_done)
+    );
+    reg        msg_start;
+    reg [2:0]  msg_sel;
+    wire       msg_busy;
+
+    uart_msg_fsm u_msg (
+        .clk_3125(clk_3125),
+        .reset(reset),
+        .start(msg_start),
+        .msg_sel(msg_sel),
+        .tx_start(tx_start),
+        .tx_data(tx_data),
+        .tx_done(tx_done),
+        .busy(msg_busy)
+    );
+    wire [7:0] moisture_percent;
+
+    soil_moisture u_mm (
+        .clk(clk_50M),
+        .adc_in(soil_adc),
+        .moisture(moisture_percent)
+    );
+    wire [7:0] temperature;
+    wire [7:0] humidity;
+    wire        dht_done;
+
+    dht11 u_dht (
+        .clk(clk_50M),
+        .reset(reset),
+        .dht_io(dht_data),
+        .temp(temperature),
+        .hum(humidity),
+        .done(dht_done)
+    );
+    localparam ST_IDLE = 3'd0;
+    localparam ST_MPI  = 3'd1;
+    localparam ST_MM   = 3'd2;
+    localparam ST_TH   = 3'd3;
+    localparam ST_DONE = 3'd4;
+
+    reg [2:0] state;
+    always @(posedge clk_3125 or posedge reset) begin
+        if (reset) begin
+            state     <= ST_IDLE;
+            msg_start <= 0;
+            msg_sel   <= 0;
+        end else begin
+            msg_start <= 0;
+
+            case (state)
+
+                // ---------------- WAIT FOR MPI ----------------
+                ST_IDLE: begin
+                    if (mpi_flag) begin
+                        msg_sel   <= 3'd0; // MPI
+                        msg_start <= 1;
+                        state     <= ST_MPI;
+                    end
+                end
+
+                // ---------------- SEND MPI ----------------
+                ST_MPI: begin
+                    if (!msg_busy)
+                        state <= ST_MM;
+                end
+
+                // ---------------- SEND MM ----------------
+                ST_MM: begin
+                    msg_sel   <= 3'd1; // MM
+                    msg_start <= 1;
+                    state     <= ST_TH;
+                end
+
+                // ---------------- SEND TH ----------------
+                ST_TH: begin
+                    if (dht_done) begin
+                        msg_sel   <= 3'd2; // TH
+                        msg_start <= 1;
+                        state     <= ST_DONE;
+                    end
+                end
+
+                ST_DONE: begin
+                    state <= ST_DONE; // stop
+                end
+
+            endcase
+        end
+    end
+endmodule 

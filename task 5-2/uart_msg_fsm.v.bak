@@ -1,0 +1,66 @@
+module uart_msg_fsm (
+    input  wire clk_3125,
+    input  wire reset,
+    input  wire start,
+    input  wire [2:0] msg_sel,
+    output reg  tx_start,
+    output reg  [7:0] tx_data,
+    input  wire tx_done,
+    output reg  busy
+);
+
+    reg [3:0] idx;
+
+    always @(posedge clk_3125 or posedge reset) begin
+        if (reset) begin
+            idx <= 0;
+            busy <= 0;
+            tx_start <= 0;
+        end else begin
+            tx_start <= 0;
+
+            if (start && !busy) begin
+                busy <= 1;
+                idx <= 0;
+            end
+
+            if (busy && tx_done) begin
+                idx <= idx + 1;
+            end
+
+            if (busy) begin
+                case (msg_sel)
+
+                    // ---------- MPI ----------
+                    3'd0: case (idx)
+                        0: tx_data <= "M";
+                        1: tx_data <= "P";
+                        2: tx_data <= "I";
+                        3: tx_data <= "\n";
+                        default: busy <= 0;
+                    endcase
+
+                    // ---------- MM ----------
+                    3'd1: case (idx)
+                        0: tx_data <= "M";
+                        1: tx_data <= "M";
+                        2: tx_data <= "\n";
+                        default: busy <= 0;
+                    endcase
+
+                    // ---------- TH ----------
+                    3'd2: case (idx)
+                        0: tx_data <= "T";
+                        1: tx_data <= "H";
+                        2: tx_data <= "\n";
+                        default: busy <= 0;
+                    endcase
+
+                endcase
+
+                tx_start <= 1;
+            end
+        end
+    end
+
+endmodule

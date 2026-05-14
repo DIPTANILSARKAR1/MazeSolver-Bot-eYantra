@@ -1,0 +1,12 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+D:/e-yantra/motors {D:/e-yantra/motors/robot_motor_top.v}
+vlog -vlog01compat -work work +incdir+D:/e-yantra/motors {D:/e-yantra/motors/encoder_decoder.v}
+vlog -vlog01compat -work work +incdir+D:/e-yantra/motors {D:/e-yantra/motors/motor_controller.v}
+vlog -vlog01compat -work work +incdir+D:/e-yantra/motors {D:/e-yantra/motors/pwm_generator.v}
+

@@ -1,0 +1,90 @@
+module bot_position(
+    input clk,
+    input reset,
+
+    input [31:0] count_L,
+    input [31:0] count_R,
+
+    input turn_left,
+    input turn_right,
+    input move_forward,
+
+    output reg [3:0] x,
+    output reg [3:0] y,
+    output reg [1:0] dir,
+    output reg reached_exit
+);
+
+parameter NORTH = 2'b00;
+parameter EAST  = 2'b01;
+parameter SOUTH = 2'b10;
+parameter WEST  = 2'b11;
+
+parameter CELL_COUNT = 3820;
+
+reg [31:0] last_L;
+reg [31:0] last_R;
+reg [31:0] diff_L;
+reg [31:0] diff_R;
+reg [31:0] avg_move;
+reg [31:0] cell_accum;
+
+always @(posedge clk) begin
+    if(!reset) begin
+        x <= 0;
+        y <= 4;
+        dir <= EAST;
+        last_L <= 0;
+        last_R <= 0;
+        diff_L <= 0;
+        diff_R <= 0;
+        avg_move <= 0;
+        cell_accum <= 0;
+        reached_exit <= 0;
+    end else begin
+
+        diff_L <= count_L - last_L;
+        diff_R <= count_R - last_R;
+
+        last_L <= count_L;
+        last_R <= count_R;
+
+        avg_move <= (diff_L + diff_R) >> 1;
+        cell_accum <= cell_accum + avg_move;
+
+        if(turn_left) begin
+            cell_accum <= 0;
+            case(dir)
+                NORTH: begin dir<=WEST;  x<= (x>0) ? x-1 : x; end
+                WEST : begin dir<=SOUTH; y<= (y>0) ? y-1 : y; end
+                SOUTH: begin dir<=EAST;  x<= (x<8) ? x+1 : x; end
+                EAST : begin dir<=NORTH; y<= (y<8) ? y+1 : y; end
+            endcase
+        end
+
+        else if(turn_right) begin
+            cell_accum <= 0;
+            case(dir)
+                NORTH: begin dir<=EAST;  x<= (x<8) ? x+1 : x; end
+                EAST : begin dir<=SOUTH; y<= (y>0) ? y-1 : y; end
+                SOUTH: begin dir<=WEST;  x<= (x>0) ? x-1 : x; end
+                WEST : begin dir<=NORTH; y<= (y<8) ? y+1 : y; end
+            endcase
+        end
+
+        else if(move_forward && cell_accum >= CELL_COUNT) begin
+            cell_accum <= cell_accum - CELL_COUNT;
+            case(dir)
+                NORTH: y <= (y < 8) ? y + 1 : y;
+                SOUTH: y <= (y > 0) ? y - 1 : y;
+                EAST : x <= (x < 8) ? x + 1 : x;
+                WEST : x <= (x > 0) ? x - 1 : x;
+            endcase
+        end
+
+        reached_exit <= (x == 8 && y == 4);
+
+    end
+end
+
+endmodule

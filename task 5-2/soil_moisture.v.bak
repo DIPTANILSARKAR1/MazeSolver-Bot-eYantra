@@ -1,0 +1,15 @@
+module soil_moisture (
+    input  wire        clk,
+    input  wire [11:0] adc_in,
+    output reg  [7:0]  moisture
+);
+
+    always @(posedge clk) begin
+        // clamp and scale
+        if (adc_in > 12'd4095)
+            moisture <= 8'd100;
+        else
+            moisture <= (adc_in * 100) / 4095;
+    end
+
+endmodule

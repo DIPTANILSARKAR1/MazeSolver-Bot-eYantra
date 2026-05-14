@@ -1,0 +1,9 @@
+
+State Machine - |uart_tx|state_reg
+Name state_reg.S_DONE state_reg.S_STOP state_reg.S_PARITY state_reg.S_DATA state_reg.S_START state_reg.S_IDLE 
+state_reg.S_IDLE 0 0 0 0 0 0 
+state_reg.S_START 0 0 0 0 1 1 
+state_reg.S_DATA 0 0 0 1 0 1 
+state_reg.S_PARITY 0 0 1 0 0 1 
+state_reg.S_STOP 0 1 0 0 0 1 
+state_reg.S_DONE 1 0 0 0 0 1 

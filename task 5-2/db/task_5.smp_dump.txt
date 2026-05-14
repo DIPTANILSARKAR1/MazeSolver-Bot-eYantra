@@ -1,0 +1,32 @@
+
+State Machine - |task_5|SERVO:u_servo|state
+Name state.S_RET_S1 state.S_MOVE_S1 state.S_MOVE_S2 state.S_IDLE state.S_RET_S2 
+state.S_IDLE 0 0 0 0 0 
+state.S_MOVE_S2 0 0 1 1 0 
+state.S_MOVE_S1 0 1 0 1 0 
+state.S_RET_S1 1 0 0 1 0 
+state.S_RET_S2 0 0 0 1 1 
+
+State Machine - |task_5|uart_tx:uart|state
+Name state.s3 state.s2 state.s1 state.s0 state.s4 
+state.s0 0 0 0 0 0 
+state.s1 0 0 1 1 0 
+state.s2 0 1 0 1 0 
+state.s3 1 0 0 1 0 
+state.s4 0 0 0 1 1 
+
+State Machine - |task_5|uart_msg_fsm:msg_fsm|state
+Name state.SEND_TH state.SEND_MM state.SEND_MPI state.IDLE 
+state.IDLE 0 0 0 0 
+state.SEND_MPI 0 0 1 1 
+state.SEND_MM 0 1 0 1 
+state.SEND_TH 1 0 0 1 
+
+State Machine - |task_5|t2a_dht:u_dht|state
+Name state.101 state.100 state.011 state.010 state.001 state.000 
+state.000 0 0 0 0 0 0 
+state.001 0 0 0 0 1 1 
+state.010 0 0 0 1 0 1 
+state.011 0 0 1 0 0 1 
+state.100 0 1 0 0 0 1 
+state.101 1 0 0 0 0 1 

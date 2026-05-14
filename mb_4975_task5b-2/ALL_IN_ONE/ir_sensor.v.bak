@@ -1,0 +1,33 @@
+module ir_sensor (
+    input  wire clk,          // system clock
+    input  wire reset_n,        // active-low reset (DE0-Nano style)
+    input  wire ir_in,          // IR sensor digital output
+    output reg  ir_detected,    // stable detection output
+    output reg  led             // indicator LED
+);
+
+    // -------- Synchronizer --------
+    reg ir_ff1, ir_ff2;
+
+    always @(posedge clk or negedge reset_n) begin
+        if (!reset_n) begin
+            ir_ff1 <= 1'b0;
+            ir_ff2 <= 1'b0;
+        end else begin
+            ir_ff1 <= ir_in;
+            ir_ff2 <= ir_ff1;
+        end
+    end
+
+    // -------- Detection logic --------
+    always @(posedge clk or negedge reset_n) begin
+        if (!reset_n) begin
+            ir_detected <= 1'b0;
+            led         <= 1'b0;
+        end else begin
+            ir_detected <= ir_ff2;
+            led         <= ir_ff2;
+        end
+    end
+
+endmodule

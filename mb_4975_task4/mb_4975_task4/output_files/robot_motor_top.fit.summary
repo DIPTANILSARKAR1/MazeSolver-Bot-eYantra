@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Jan 22 23:53:33 2026
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : robot_motor_top
+Top-level Entity Name : robot_motor_top
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 2,274 / 22,320 ( 10 % )
+    Total combinational functions : 1,404 / 22,320 ( 6 % )
+    Dedicated logic registers : 1,702 / 22,320 ( 8 % )
+Total registers : 1702
+Total pins : 21 / 154 ( 14 % )
+Total virtual pins : 0
+Total memory bits : 10,880 / 608,256 ( 2 % )
+Embedded Multiplier 9-bit elements : 12 / 132 ( 9 % )
+Total PLLs : 0 / 4 ( 0 % )

@@ -1,0 +1,73 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "adc_cs_n",
+					"strict" : false
+				},
+				{
+					"name" : "adc_sck",
+					"strict" : false
+				},
+				{
+					"name" : "tx",
+					"strict" : false
+				},
+				{
+					"name" : "SERVO_1",
+					"strict" : false
+				},
+				{
+					"name" : "SERVO_2",
+					"strict" : false
+				},
+				{
+					"name" : "DHT_PIN",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50M",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "dout",
+					"strict" : false
+				},
+				{
+					"name" : "ir_l",
+					"strict" : false
+				},
+				{
+					"name" : "ir_r",
+					"strict" : false
+				},
+				{
+					"name" : "ir_f",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

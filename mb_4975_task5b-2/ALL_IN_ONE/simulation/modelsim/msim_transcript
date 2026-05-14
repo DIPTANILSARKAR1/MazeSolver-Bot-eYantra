@@ -1,0 +1,104 @@
+# Reading pref.tcl
+# do robot_motor_top_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/e-yantra/motors {D:/e-yantra/motors/robot_motor_top.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:21:41 on Jan 16,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/e-yantra/motors" D:/e-yantra/motors/robot_motor_top.v 
+# -- Compiling module robot_motor_top
+# 
+# Top level modules:
+# 	robot_motor_top
+# End time: 23:21:41 on Jan 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/e-yantra/motors {D:/e-yantra/motors/encoder_decoder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:21:41 on Jan 16,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/e-yantra/motors" D:/e-yantra/motors/encoder_decoder.v 
+# -- Compiling module encoder_decoder
+# 
+# Top level modules:
+# 	encoder_decoder
+# End time: 23:21:41 on Jan 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/e-yantra/motors {D:/e-yantra/motors/motor_controller.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:21:41 on Jan 16,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/e-yantra/motors" D:/e-yantra/motors/motor_controller.v 
+# -- Compiling module motor_controller
+# 
+# Top level modules:
+# 	motor_controller
+# End time: 23:21:41 on Jan 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/e-yantra/motors {D:/e-yantra/motors/pwm_generator.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:21:41 on Jan 16,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/e-yantra/motors" D:/e-yantra/motors/pwm_generator.v 
+# -- Compiling module pwm_generator
+# 
+# Top level modules:
+# 	pwm_generator
+# End time: 23:21:41 on Jan 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/e-yantra/motors {D:/e-yantra/motors/path_controller.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:21:41 on Jan 16,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/e-yantra/motors" D:/e-yantra/motors/path_controller.v 
+# -- Compiling module path_controller
+# 
+# Top level modules:
+# 	path_controller
+# End time: 23:21:41 on Jan 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/e-yantra/motors/output_files {D:/e-yantra/motors/output_files/tb_robot_motor_top.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:21:41 on Jan 16,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/e-yantra/motors/output_files" D:/e-yantra/motors/output_files/tb_robot_motor_top.v 
+# -- Compiling module tb_robot_motor_top
+# 
+# Top level modules:
+# 	tb_robot_motor_top
+# End time: 23:21:41 on Jan 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb_robot_motor_top
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" tb_robot_motor_top 
+# Start time: 23:21:41 on Jan 16,2026
+# Loading work.tb_robot_motor_top
+# Loading work.robot_motor_top
+# Loading work.motor_controller
+# Loading work.pwm_generator
+# Loading work.encoder_decoder
+# Loading work.path_controller
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 14, found 12.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_robot_motor_top/dut File: D:/e-yantra/motors/output_files/tb_robot_motor_top.v Line: 25
+# ** Warning: (vsim-3722) D:/e-yantra/motors/output_files/tb_robot_motor_top.v(25): [TFMPC] - Missing connection for port 'posA'.
+# ** Warning: (vsim-3722) D:/e-yantra/motors/output_files/tb_robot_motor_top.v(25): [TFMPC] - Missing connection for port 'posB'.
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $finish    : D:/e-yantra/motors/output_files/tb_robot_motor_top.v(112)
+#    Time: 200 us  Iteration: 0  Instance: /tb_robot_motor_top
+# 1
+# Break in Module tb_robot_motor_top at D:/e-yantra/motors/output_files/tb_robot_motor_top.v line 112
+add wave -position insertpoint  \
+sim:/tb_robot_motor_top/dut/posA \
+sim:/tb_robot_motor_top/dut/posB
+# WARNING: No extended dataflow license exists
+# End time: 23:22:28 on Jan 16,2026, Elapsed time: 0:00:47
+# Errors: 0, Warnings: 3

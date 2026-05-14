@@ -1,0 +1,22 @@
+{
+	"system" : {
+		"platform" : "windows64",
+		"os_name" : "Windows 10",
+		"os_version" : "10.0"
+	},
+	"error" : {
+		"executable" : "quartus_map",
+		"comment" : "not_applicable",
+		"error_message" : "m_sum_lut_is_used",
+		"source_file" : "/quartus/db/cdb_atom_cuda/cdb_atom_cuda_lcell.cpp",
+		"line" : "749",
+		"stack_trace" : "\t0x7ffe6919d165: db_cdb_atom_cuda + 0x1d165 (?get_transformed_lutmask_at_oterm@CDB_ATOM_CUDA_LCELL_COMB@@MEAA_KPEBVCDB_ATOM_OTERM@@@Z + 0x125)\n\t0x7ffe6919cf1c: db_cdb_atom_cuda + 0x1cf1c (?get_lutmask_at_oterm@CDB_ATOM_CUDA_LCELL_COMB@@UEAA_KPEBVCDB_ATOM_OTERM@@@Z + 0x11c)\n\t0x7ffe69ddb305: db_cut + 0x3fb305 (?get_lutmask_at_oterm@CUT_LCELL_UTIL@@SA?AVCDB_LUTMASK@@PEBVCDB_ATOM_OTERM@@@Z + 0x105)\n\t0x7ffe69de06c8: db_cut + 0x4006c8 (?oterm_is_comb_gnd@CUT_LCELL_UTIL@@SA_NPEBVCDB_ATOM_OTERM@@@Z + 0xc8)\n\t0x7ffe0bce75c5: atm_amerge + 0x275c5 (?amerge_get_tap_source_string@@YAXPEBVAMERGE_TAP_RECORD@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z + 0x45)\n\t0x7ffe0bceda6a: atm_amerge + 0x2da6a (?generate_report_and_messages@AMERGE_TAP_FLOW@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z + 0xd5a)\n\t0x7ffe0bcf542a: atm_amerge + 0x3542a (?tap_user_logic@AMERGE_MERGER_OP@@AEAA_NXZ + 0x66a)\n\t0x7ffe0bcd5d24: atm_amerge + 0x15d24 (?merge_all_partitions@AMERGE_MERGER_OP@@QEAA_NPEAI@Z + 0x2b4)\n\t0x7ffe0bcc4c1e: atm_amerge + 0x4c1e (?amerge_combine_netlist@@YA_NPEAVCMP_FACADE@@_NPEA_N@Z + 0x29e)\n\t0x7ffe0bcc4e8f: atm_amerge + 0x4e8f (amerge_mini_merge + 0xf)\n\t0x7ff6c6af2efd: quartus_map + 0x12efd (?do_mini_merge@QSYN_FRAMEWORK@@AEAA_NPEAVCMP_FACADE@@@Z + 0x2dd)\n\t0x7ff6c6b03832: quartus_map + 0x23832 (?write_qic_databases@QSYN_FRAMEWORK@@AEAA_N_N@Z + 0x932)\n\t0x7ff6c6b02574: quartus_map + 0x22574 (?write_databases@QSYN_FRAMEWORK@@UEAA_N_N@Z + 0x114)\n\t0x7ffebefa15c8: comp_qexe + 0x115c8 (qexe_do_normal + 0x2a8)\n\t0x7ffebefa6622: comp_qexe + 0x16622 (qexe_run + 0x432)\n\t0x7ffebefa7371: comp_qexe + 0x17371 (?qexe_standard_main@@YAHPEAVQEXE_FRAMEWORK@@PEAPEBUQEXE_OPTION_DEFINITION@@HPEAPEBD@Z + 0xc1)\n\t0x7ff6c6afb42b: quartus_map + 0x1b42b (?qsyn_main@@YAHHPEAPEBD@Z + 0x53b)\n\t0x7ffec3973258: CCL_MSG + 0x13258 (?msg_main_thread@@YAPEAXPEAX@Z + 0x18)\n\t0x7ffec3974a5e: CCL_MSG + 0x14a5e (?msg_thread_wrapper@@YAPEAXP6APEAXPEAX@Z0@Z + 0x6e)\n\t0x7ffec3686af0: ccl_mem + 0x16af0 (?mem_thread_wrapper@@YAPEAXP6APEAXPEAX@Z0@Z + 0x70)\n\t0x7ffec3972af1: CCL_MSG + 0x12af1 (?msg_exe_main@@YAHHPEAPEBDP6AHH0@Z@Z + 0xa1)\n\t0x7ff6c6b0a236: quartus_map + 0x2a236 (__tmainCRTStartup + 0x10e)\n\t0x7ffeef52e8d6: KERNEL32 + 0x2e8d6 (BaseThreadInitThunk + 0x16)\n\t0x7ffef15ec53b: ntdll + 0x8c53b (RtlUserThreadStart + 0x2b)\n",
+		"subsystem" : "CDB_ATOM_CUDA"
+	},
+	"quartus" : {
+		"quartus_bits" : "64",
+		"version" : "20.1.1",
+		"build" : "720",
+		"edition" : "Lite Edition"
+	}
+}

@@ -1,0 +1,79 @@
+module us_sensor(
+    input clk_50M,
+    input reset,
+    input echo_rx,
+    output reg trig,
+    output op,
+    output wire [15:0] distance_out
+);
+
+reg [1:0] state;
+reg [31:0] counter;
+reg [31:0] echo_counter;
+
+
+parameter s0 = 2'b00, s1 = 2'b01, s2 = 2'b10, s3 = 2'b11;
+parameter delay_1_us = 50, delay_10_us = 499, delay_12_ms = 600001 , delay_15_ms = 750000;
+
+initial begin
+    trig = 0;
+    counter = 0;
+    echo_counter = 0;
+    state=s0;
+end
+
+
+assign op = (distance_out > 0 && distance_out < 70) ? 1'b1 : 1'b0;
+assign distance_out = (echo_counter * 3565) >> 20;
+
+// FSM
+always @(posedge clk_50M or negedge reset) begin
+    if(!reset) begin
+        state <= s0;
+        trig <= 0;
+        counter <= 0;
+        echo_counter <= 0;
+    end 
+    else begin
+        case(state)
+
+            s0: begin
+                counter <= counter + 1;
+                trig <= 0;
+                if(counter > delay_1_us) begin
+                    counter <= 0;
+                    state <= s1;
+                    trig<=1;
+                end
+            end
+
+            s1: begin
+                counter <= counter + 1;
+                if(counter >= delay_10_us) begin
+                    trig <= 0;
+                    counter <= 0;
+                    state <= s2;
+                end
+            end
+
+            s2: begin
+                counter <= counter + 1;
+                if (!echo_rx) begin
+                    state <=s3; 
+				    echo_counter <= counter;
+                end
+            end
+
+            s3: begin
+                counter <= counter + 1;
+                if (counter >= delay_12_ms ) begin
+                    state <= s0;
+                    counter <= 0;
+                end
+            end
+        endcase
+    end
+end
+
+
+endmodule

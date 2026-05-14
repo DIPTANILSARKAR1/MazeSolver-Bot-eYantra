@@ -1,0 +1,395 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/mb_4975_task1c/t1c_riscv_cpu/simulation/modelsim
+vadder
+Z1 !s110 1760335662
+!i10b 1
+!s100 jXE67fZjiCj2W4l?`i:H?0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I4bHIXGWgOZ0higM][iGFL1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1722889558
+8D:/mb_4975_task1c/t1c_riscv_cpu/code/components/adder.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/code/components/adder.v
+!i122 13
+L0 4 8
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1760335662.000000
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/code/components/adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code/components|D:/mb_4975_task1c/t1c_riscv_cpu/code/components/adder.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code/components
+Z8 tCvgOpt 0
+valu
+R1
+!i10b 1
+!s100 1aD[]ANN^2Den:]KZ^oRk0
+R2
+I5fMP55G_554J?EK6AzVCW2
+R3
+R0
+w1760288421
+8D:/mb_4975_task1c/t1c_riscv_cpu/code/components/alu.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/code/components/alu.v
+!i122 12
+L0 2 84
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/code/components/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code/components|D:/mb_4975_task1c/t1c_riscv_cpu/code/components/alu.v|
+!i113 1
+R6
+R7
+R8
+valu_decoder
+R1
+!i10b 1
+!s100 1lbRF<niEJoNcFiNfD_Hi2
+R2
+IKLVo=[J637VdGmf;caDQI2
+R3
+R0
+w1760288758
+8D:/mb_4975_task1c/t1c_riscv_cpu/code/components/alu_decoder.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/code/components/alu_decoder.v
+!i122 11
+L0 2 56
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/code/components/alu_decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code/components|D:/mb_4975_task1c/t1c_riscv_cpu/code/components/alu_decoder.v|
+!i113 1
+R6
+R7
+R8
+vcontroller
+R1
+!i10b 1
+!s100 RAI@`UK2[;2m723H0OdCn2
+R2
+IX5;EF2RVaS@h?8cmEeGOh2
+R3
+R0
+Z9 w1760180488
+8D:/mb_4975_task1c/t1c_riscv_cpu/code/components/controller.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/code/components/controller.v
+!i122 10
+L0 4 26
+R4
+r1
+!s85 0
+31
+Z10 !s108 1760335661.000000
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/code/components/controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code/components|D:/mb_4975_task1c/t1c_riscv_cpu/code/components/controller.v|
+!i113 1
+R6
+R7
+R8
+vdata_mem
+Z11 !s110 1760335659
+!i10b 1
+!s100 hFa2HElO^G@K9`Mk>6D]>2
+R2
+IE@j6[5YC@hGTdM53bI:la0
+R3
+R0
+w1760335606
+8D:/mb_4975_task1c/t1c_riscv_cpu/code/data_mem.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/code/data_mem.v
+!i122 2
+L0 3 159
+R4
+r1
+!s85 0
+31
+Z12 !s108 1760335659.000000
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/code/data_mem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code|D:/mb_4975_task1c/t1c_riscv_cpu/code/data_mem.v|
+!i113 1
+R6
+Z13 !s92 -vlog01compat -work work +incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code
+R8
+vdatapath
+Z14 !s110 1760335661
+!i10b 1
+!s100 _J=6EfU9PP0?IekNzFbgi1
+R2
+IPS8CUDWi@>8[H;hFVYTCA0
+R3
+R0
+R9
+8D:/mb_4975_task1c/t1c_riscv_cpu/code/components/datapath.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/code/components/datapath.v
+!i122 9
+L0 3 68
+R4
+r1
+!s85 0
+31
+R10
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/code/components/datapath.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code/components|D:/mb_4975_task1c/t1c_riscv_cpu/code/components/datapath.v|
+!i113 1
+R6
+R7
+R8
+vimm_extend
+R14
+!i10b 1
+!s100 KCY0HN8a_SDDT@o^3341e2
+R2
+III>=_SlOam0B]Y;d6TdHi3
+R3
+R0
+w1722889666
+8D:/mb_4975_task1c/t1c_riscv_cpu/code/components/imm_extend.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/code/components/imm_extend.v
+!i122 8
+L0 3 21
+R4
+r1
+!s85 0
+31
+R10
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/code/components/imm_extend.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code/components|D:/mb_4975_task1c/t1c_riscv_cpu/code/components/imm_extend.v|
+!i113 1
+R6
+R7
+R8
+vinstr_mem
+Z15 !s110 1760335663
+!i10b 1
+!s100 _2]cbk6YNQ9ECcKm2oV;A0
+R2
+ICIbMZR9`PEbNV_VI?D]]V3
+R3
+R0
+Z16 w1760180486
+8D:/mb_4975_task1c/t1c_riscv_cpu/code/instr_mem.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/code/instr_mem.v
+!i122 14
+L0 4 18
+R4
+r1
+!s85 0
+31
+Z17 !s108 1760335663.000000
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/code/instr_mem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code|D:/mb_4975_task1c/t1c_riscv_cpu/code/instr_mem.v|
+!i113 1
+R6
+R13
+R8
+vmain_decoder
+R14
+!i10b 1
+!s100 ;2H13HTAeR5<lb0z;hG:82
+R2
+I<7zRW3RhCi1mb[XYKj7LV2
+R3
+R0
+w1760288582
+8D:/mb_4975_task1c/t1c_riscv_cpu/code/components/main_decoder.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/code/components/main_decoder.v
+!i122 7
+L0 2 82
+R4
+r1
+!s85 0
+31
+Z18 !s108 1760335660.000000
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/code/components/main_decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code/components|D:/mb_4975_task1c/t1c_riscv_cpu/code/components/main_decoder.v|
+!i113 1
+R6
+R7
+R8
+vmux2
+Z19 !s110 1760335660
+!i10b 1
+!s100 O<Ld`3jD6QL?6PIEe_QAk1
+R2
+In9HjJ551:?`TID0;93aRZ0
+R3
+R0
+w1722889624
+8D:/mb_4975_task1c/t1c_riscv_cpu/code/components/mux2.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/code/components/mux2.v
+!i122 6
+Z20 L0 4 9
+R4
+r1
+!s85 0
+31
+R18
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/code/components/mux2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code/components|D:/mb_4975_task1c/t1c_riscv_cpu/code/components/mux2.v|
+!i113 1
+R6
+R7
+R8
+vmux4
+R19
+!i10b 1
+!s100 V4YdM>hK^I8CMb?cH8Cej3
+R2
+IdV7fF:UVkHOULJnLHO04h0
+R3
+R0
+R9
+8D:/mb_4975_task1c/t1c_riscv_cpu/code/components/mux4.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/code/components/mux4.v
+!i122 5
+R20
+R4
+r1
+!s85 0
+31
+R18
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/code/components/mux4.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code/components|D:/mb_4975_task1c/t1c_riscv_cpu/code/components/mux4.v|
+!i113 1
+R6
+R7
+R8
+vreg_file
+R19
+!i10b 1
+!s100 z2]InGk0[gjzdlc7_WWYI1
+R2
+I<mBhXk1zF_nT4`YM4<Yz_0
+R3
+R0
+R16
+8D:/mb_4975_task1c/t1c_riscv_cpu/code/components/reg_file.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/code/components/reg_file.v
+!i122 4
+L0 8 27
+R4
+r1
+!s85 0
+31
+R18
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/code/components/reg_file.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code/components|D:/mb_4975_task1c/t1c_riscv_cpu/code/components/reg_file.v|
+!i113 1
+R6
+R7
+R8
+vreset_ff
+R11
+!i10b 1
+!s100 c1I5T0L8]]ZK0dn2hg0_F0
+R2
+IVEzPB7YO8boVoCmjbH8Uf2
+R3
+R0
+R16
+8D:/mb_4975_task1c/t1c_riscv_cpu/code/components/reset_ff.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/code/components/reset_ff.v
+!i122 3
+L0 4 12
+R4
+r1
+!s85 0
+31
+R12
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/code/components/reset_ff.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code/components|D:/mb_4975_task1c/t1c_riscv_cpu/code/components/reset_ff.v|
+!i113 1
+R6
+R7
+R8
+vriscv_cpu
+R11
+!i10b 1
+!s100 [9FjF]Q==K[^;cNoLcFzl1
+R2
+I7TdSU>YBlG:Z?<R9j41Z82
+R3
+R0
+R16
+8D:/mb_4975_task1c/t1c_riscv_cpu/code/riscv_cpu.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/code/riscv_cpu.v
+!i122 1
+L0 4 23
+R4
+r1
+!s85 0
+31
+R12
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/code/riscv_cpu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code|D:/mb_4975_task1c/t1c_riscv_cpu/code/riscv_cpu.v|
+!i113 1
+R6
+R13
+R8
+vt1c_riscv_cpu
+!s110 1760335658
+!i10b 1
+!s100 _06EPmW0mYWo69XjmhmhY3
+R2
+IXSoYOldn8V`2DT=MMD9kO3
+R3
+R0
+w1760180482
+8D:/mb_4975_task1c/t1c_riscv_cpu/code/t1c_riscv_cpu.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/code/t1c_riscv_cpu.v
+!i122 0
+L0 4 25
+R4
+r1
+!s85 0
+31
+!s108 1760335658.000000
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/code/t1c_riscv_cpu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/code|D:/mb_4975_task1c/t1c_riscv_cpu/code/t1c_riscv_cpu.v|
+!i113 1
+R6
+R13
+R8
+vtb
+R15
+!i10b 1
+!s100 KUILW@<Bglnb[M5X=o:DC1
+R2
+IfOWLY<[mEQ5`lMAiT3UNB1
+R3
+R0
+w1760180584
+8D:/mb_4975_task1c/t1c_riscv_cpu/.test/tb.v
+FD:/mb_4975_task1c/t1c_riscv_cpu/.test/tb.v
+!i122 15
+L0 3 532
+R4
+r1
+!s85 0
+31
+R17
+!s107 D:/mb_4975_task1c/t1c_riscv_cpu/.test/tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mb_4975_task1c/t1c_riscv_cpu/.test|D:/mb_4975_task1c/t1c_riscv_cpu/.test/tb.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+D:/mb_4975_task1c/t1c_riscv_cpu/.test
+R8

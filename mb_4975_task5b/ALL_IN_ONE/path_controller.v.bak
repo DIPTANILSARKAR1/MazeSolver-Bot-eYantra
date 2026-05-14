@@ -1,0 +1,75 @@
+module path_controller (
+    input  wire clk,
+    input  wire reset,
+
+    input  signed [31:0] pos_A,
+    input  signed [31:0] pos_B,
+
+    output reg  [3:0] speed_A,
+    output reg  [3:0] speed_B,
+    output reg  [1:0] dir_A,
+    output reg  [1:0] dir_B
+);
+
+    localparam IDLE       = 3'd0;
+    localparam FWD_1      = 3'd1;
+    localparam TURN_LEFT  = 3'd2;
+    localparam FWD_2      = 3'd3;
+    localparam STOP       = 3'd4;
+
+    reg [2:0] state;
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            state   <= IDLE;
+            speed_A <= 0;
+            speed_B <= 0;
+            dir_A   <= 0;
+            dir_B   <= 0;
+        end else begin
+            case (state)
+
+                IDLE: begin
+                    state   <= FWD_1;
+                end
+
+                FWD_1: begin
+                    speed_A <= 4'd8;
+                    speed_B <= 4'd8;
+                    dir_A   <= 2'b01;
+                    dir_B   <= 2'b01;
+
+                    if (pos_A >= 1000 && pos_B >= 1000)
+                        state <= TURN_LEFT;
+                end
+
+                TURN_LEFT: begin
+                    speed_A <= 4'd6;
+                    speed_B <= 4'd6;
+                    dir_A   <= 2'b00; // reverse left
+                    dir_B   <= 2'b01; // forward right
+
+                    if (pos_A <= -300 || pos_B >= 300)
+                        state <= FWD_2;
+                end
+
+                FWD_2: begin
+                    speed_A <= 4'd8;
+                    speed_B <= 4'd8;
+                    dir_A   <= 2'b01;
+                    dir_B   <= 2'b01;
+
+                    if (pos_A >= 500 && pos_B >= 500)
+                        state <= STOP;
+                end
+
+                STOP: begin
+                    speed_A <= 0;
+                    speed_B <= 0;
+                end
+
+            endcase
+        end
+    end
+
+endmodule

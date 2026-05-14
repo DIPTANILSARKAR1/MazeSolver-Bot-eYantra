@@ -1,0 +1,14 @@
+Partition Merge Status : Successful - Tue Jan 20 00:01:18 2026
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : robot_motor_top
+Top-level Entity Name : robot_motor_top
+Family : Cyclone IV E
+Total logic elements : 2,305
+    Total combinational functions : 1,140
+    Dedicated logic registers : 1,835
+Total registers : 1835
+Total pins : 22
+Total virtual pins : 0
+Total memory bits : 12,160
+Embedded Multiplier 9-bit elements : 12
+Total PLLs : 0
