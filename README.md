@@ -5,7 +5,10 @@
 🏆 **5th Position** among **682 teams** across India · Top 100 (Stage 2) → Top 6 Finalists
 
 ---
-<img src="docs/bot.png" alt="MazeSolver Bot" width="400">
+<p align="center">
+  <img src="docs/bot.png" width="350">
+  <img src="docs/certificate.png" width="350">
+</p>
 
 ## 📖 Overview
 
