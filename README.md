@@ -6,8 +6,7 @@
 
 ---
 <p align="center">
-  <img src="docs/robot.png" width="350">
-  <img src="docs/certificate.png" width="350">
+  <img src="docs/bot_certificate.png" width="350">
 </p>
 
 ## 📖 Overview
