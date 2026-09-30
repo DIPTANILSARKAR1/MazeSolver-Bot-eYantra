@@ -6,7 +6,7 @@
 
 ---
 <p align="center">
-  <img src="docs/bot_certificate.png" width="350">
+  <img src="docs/bot_certificate.png" width="400">
 </p>
 
 ## 📖 Overview
