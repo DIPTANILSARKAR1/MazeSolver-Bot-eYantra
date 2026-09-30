@@ -6,7 +6,7 @@
 
 ---
 <p align="center">
-  <img src="docs/bot.png" width="350">
+  <img src="docs/robot.png" width="350">
   <img src="docs/certificate.png" width="350">
 </p>
 
