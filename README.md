@@ -2,7 +2,7 @@
 
 **e-Yantra Robotics Competition (eYRC 2025-26) · IIT Bombay · MazeSolver Bot Theme**
 
-🏆 **5th Position** among **682 teams** across India · Top 100 (Stage 2) → Top 6 Finalists
+🏆 **5th Position** among **682 teams** across India ·
 
 ---
 <p align="center">
