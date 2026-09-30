@@ -6,6 +6,7 @@
 
 ---
 ![MazeSolver Bot](docs/bot.png)
+<img src="docs/bot.png" alt="MazeSolver Bot" width="400">
 
 ## 📖 Overview
 
